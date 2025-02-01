@@ -1,7 +1,9 @@
 ---
 title: "India TB Pathways Analysis: DEMO OF COMMON ERRORS"
 author: "Your Name Here"
-format:html
+format: html
+execute: 
+  echo: false
 ---
 
 # Intro to dataset
@@ -12,17 +14,21 @@ In this report, we analyze the India TB Pathways dataset.
 # Import packages
 import pandas as pd
 import plotly.express as px
+import itables as it
 
 # Load the dataset
-df = pd.read_csv("india_tb_pathways_and_costs.csv")
+df = pd.read_csv("data/india_tb_pathways_and_costs.csv")
 
-show(df.head())
+it.show(df.head())
 ```
 
 The dataset is seen above.
+
 # Age vs alcohol violin chart
 
 ```{python}
 # Create a violin plot of Age vs Alcohol
 fig = px.violin(df, x="Alcohol", y="Age", title="Age vs Alcohol Consumption")
+
+fig.show()
 ```

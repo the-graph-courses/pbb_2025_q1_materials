@@ -49,7 +49,7 @@ patients registered at Primary Health Centres (PHCs).*
 
 8) Download the following image of the Tamil Nadu map and add it to an images folder in your repository: 
 
-[https://imgur.com/VdhR2fr](https://imgur.com/VdhR2fr)
+[https://github.com/the-graph-courses/pbb_2025_q1_materials/blob/main/week_04_workshop/images/tndistrict_1.png](https://github.com/the-graph-courses/pbb_2025_q1_materials/blob/main/week_04_workshop/images/tndistrict_1.png)
 
 9) Embed that image in your report using the appropriate Quarto syntax. Include a relevant description.
 
