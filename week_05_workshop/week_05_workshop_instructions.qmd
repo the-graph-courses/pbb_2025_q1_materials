@@ -39,17 +39,17 @@ Now, drop the `rownames` column from the dataframe, as it's not a useful variabl
 # Your code here
 ```
 
-## Data Subset 1: Extract demographic and loan information
+## Data Subset 1: Extract demographic information
 
-Create a subset containing the following demographic information: employment title, employment length, state, homeownership status. You may need to consult the data dictionary to identify which variables you need. Call your subset `demog_loan_info`.
+Create a subset containing the following demographic information: employment title, employment length, state, homeownership status. You may need to consult the data dictionary to identify which variables you need. Call your subset `demog_info`.
 
-After creating the subset, rename the `term` column to `loan_term_months` to make it clear what the variable measures.
+After creating the subset, rename the `emp_title` and `emp_length` columns to `employment_title` and `employment_length_yrs` respectively.
 
 ```{python}
 # Your code here
 ```
 
-Now, export the subset to a CSV file. You can do this by typing and running the following code: `demog_loan_info.to_csv('Demographic_Information.csv', index=False)`, assuming your dataframe is named `demog_loan_info` and you want to call the output csv `Demographic_Information.csv`.
+Now, export the subset to a CSV file. You can do this by typing and running the following code: `demog_info.to_csv('Demographic_Information.csv', index=False)`, assuming your dataframe is named `demog_info` and you want to call the output csv `Demographic_Information.csv`.
 
 ```{python}
 # Your code here
