@@ -174,3 +174,15 @@ Set fill color to match the values of your categorical variable.
 ```
 
 Write a short explanation of what you see in the plot.
+
+## Optional Challenge Question: Health Risk Classification
+
+1. Write a function `assess_risk()` that:  
+   - Returns `"High Risk"` if **BMI ≥ 30** and **total physical activity < 500 min/week**  
+   - Otherwise, returns `"Not High Risk"`  
+
+2. Create a new column `risk_category` in your `pa` DataFrame by applying this function.  
+
+3. Make a percentage stacked bar chart showing the count of `"High Risk"` and `"Not High Risk"` individuals, grouped by `sex`. 
+
+Comment on the findings. Which gender has a higher proportion of high risk individuals?
