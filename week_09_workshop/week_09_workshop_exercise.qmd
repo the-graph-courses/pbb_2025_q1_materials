@@ -179,15 +179,13 @@ Now, you'll select 3 countries of your choice and plot their incidence rate over
 - Query the data to narrow down the countries. 
 - Convert the `year` column to a `numeric` type with `astype(int)`.
 
-Store the result as `hiv_data_mini`.
-
-Note that some countries have many years with missing data, especially for `new_cases`.
+Store the result as `hiv_data_mini`. Note that some countries have many years with missing data, especially for `new_cases`.
 
 ```{python}
 # Your code here
 ```
 
-Now plot incidence rates over time using Plotly Express.
+Now plot incidence rates over time using a line graph.
 
 ```{python}
 # Your code here
