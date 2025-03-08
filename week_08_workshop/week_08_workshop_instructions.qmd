@@ -1,10 +1,11 @@
 ---
 title: "Workshop Exercise: Grouping, Summarizing and Plotting"
+author: "AUTHOR NAME HERE"
 ---
 
-## Data Preparation
+# 1. Data Preparation
 
-### Load Packages
+## 1.1. Load Packages
 
 To get started, **load in the needed packages**: pandas, numpy, plotly express.
 
@@ -12,7 +13,7 @@ To get started, **load in the needed packages**: pandas, numpy, plotly express.
 # Your code here
 ```
 
-### Import Data
+## 1.2. Import Data
 
 Download the `india_tuberculosis.csv` file from the course portal and save it in your `data` folder.
 
@@ -30,7 +31,7 @@ Run the following line of code to convert all column names to lowercase and repl
 tb.columns = tb.columns.str.lower().str.replace(' ', '_')
 ```
 
-### Calculate Total Cost
+## 1.3. Calculate Total Cost
 
 Each patient record notes the location and cost of up to three visits. Add together these costs (`first_visit_cost`, `second_visit_cost`, and `third_visit_cost`) to create a `total_cost` variable.
 
@@ -39,9 +40,9 @@ Each patient record notes the location and cost of up to three visits. Add toget
 tb['total_cost'] = ...
 ```
 
-## Investigating Healthcare Costs by Education Level
+# 2. Investigating Healthcare Costs by Education Level
 
-### Reorder Education Levels
+## 2.1. Reorder Education Levels
 
 Before moving further, let's take a closer look at the `education` variable in our dataset:
 
@@ -84,7 +85,7 @@ tb["education"].value_counts()
 
 We will use the newly transformed `education` variable for grouping, summarizing, and plotting below.
 
-### Table of Costs by Education Level
+## 2.2. Table of Costs by Education Level
 
 Let's compare the cost of treatment at different health facilities using a summary table. Use pandas methods to group by education level and create a summary table with two variables:
 
@@ -111,7 +112,7 @@ YOUR ANSWER HERE
 
 Below, we will visualize the data with a plot to see if there is a relationship between education level and healthcare costs.
 
-### Visualize Costs by Education Level
+## 2.3. Visualize Costs by Education Level
 
 Using `plotly.express` and the costs summary table you created earlier, create a bar plot of mean costs by education level. It should be sorted from lowest education level to highest education level.
 
@@ -121,9 +122,9 @@ Using `plotly.express` and the costs summary table you created earlier, create a
 
 Write a short interpretation of the plot.
 
-## Investigating Healthcare Costs by Age Group
+# 3. Investigating Healthcare Costs by Age Group
 
-### Create an `age_group` Variable
+## 3.1. Create an `age_group` Variable
 
 The `age` variable records the age of each patient in years. We want to classify the patients into four approximately equally-sized age groups for further analysis.
 
@@ -158,7 +159,7 @@ tb["age_group"].value_counts(normalize=True)
 
 **Checkpoint:** If you classified the age groups correctly, you will see that each age group has approximately 24-26% of the patients.
 
-### Table of Costs by Age Group
+## 3.2. Table of Costs by Age Group
 
 Next, summarize the total healthcare costs by age group. Use pandas methods to group by `age_group` and create a summary table with two variables:
 
@@ -172,7 +173,7 @@ Store the resulting DataFrame as an object called `age_cost_table`.
 age_cost_table = ...
 ```
 
-### Visualize Costs by Age Group
+## 3.3. Visualize Costs by Age Group
 
 Using `plotly.express` and the costs summary table you created earlier, create a bar plot of mean costs by age group.
 
@@ -182,7 +183,7 @@ Using `plotly.express` and the costs summary table you created earlier, create a
 
 Write a short interpretation of the plot.
 
-## Bonus Challenge (Optional and Ungraded)
+# 4. Bonus Challenge (Optional)
 
 If you finish early and have extra time, you can explore and transform the dataset further.
 
@@ -195,7 +196,7 @@ tb["first_visit_location"].unique()
 
 Note: PHC = primary health center, GH = govt hospital, etc.
 
-### Comparing Delays in Public vs Private Health Facilities
+## 4.1. Comparing Delays in Public vs Private Health Facilities
 
 Let's create a new variable indicating whether a healthcare location is private or public. We can do this using the `str.contains()` function from pandas.
 
@@ -212,8 +213,3 @@ Inspect the new variable in `tb`.
 Your assignment for this challenge is to summarize delays in treatment and compare the length of delays between private and public health facilities.
 
 You can start by making a summary table of `treatment_initiation_delay_in_days`, grouped by `first_visit_type`. Then visualize the data and draw insights from your findings.
-
-
-## Wrap Up
-
-That's it for this assignment! Feel free to explore further and share your findings.

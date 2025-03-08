@@ -1,5 +1,6 @@
 ---
 title: "Python Workshop: Data Subsetting"
+author: "AUTHOR NAME HERE"
 ---
 
 # Introduction
