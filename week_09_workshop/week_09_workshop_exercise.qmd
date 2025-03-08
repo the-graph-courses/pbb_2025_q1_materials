@@ -1,5 +1,5 @@
 ---
-title: "Workshop Exercise: Joining and Pivoting"
+title: "Workshop Exercise: Joining and Reshaping Data"
 author: "YOUR NAME HERE"
 ---
 
@@ -41,9 +41,9 @@ Now, we import data on population estimates per country per year from the World 
 population = pd.read_csv("data/population_estimates_world_bank.csv")
 ```
 
-# 4. Data Pivoting
+# 4. Reshape Data
 
-Now that we have imported the data it's time to pivot it.
+Now that we have imported the data it's time to reshape it.
 
 The datasets are currently in wide format, with each year as a separate column, something like this:
 
@@ -89,7 +89,7 @@ new_hiv_long =
 
 ## 4.2 Instructions for Reshaping `total_hiv_raw` Data
 
-In a similar manner, pivot the `total_hiv_raw` dataset to a long format. Convert the year columns into a new column called `year` and the counts into `total_cases`.
+In a similar manner, reshape the `total_hiv_raw` dataset to a long format. Convert the year columns into a new column called `year` and the counts into `total_cases`.
 
 ```{python}
 # Reshape total_hiv_raw to long format
