@@ -3,11 +3,11 @@ title: "Workshop Exercise: Joining and Pivoting"
 author: "YOUR NAME HERE"
 ---
 
-# Introduction
+# 1. Introduction
 
 In this workshop, you'll learn how to clean and analyze HIV and AIDS data across different countries and years. We will start with raw datasets containing estimates of new and total HIV cases per country-year. The goal is to clean and merge these datasets with population data.
 
-# Load Libraries
+# 2. Load Libraries
 
 ```{python}
 # Load libraries
@@ -16,7 +16,9 @@ import country_converter as coco
 import plotly.express as px
 ```
 
-# Data Import
+# 3. Data Import
+
+Download the datasets from the relevant link on the course page and unzip them if necessary.
 
 First, we import two raw datasets, each containing estimates per country-year. These data were accessed from the Gapminder foundation, at [www.gapminder.org/data](https://www.gapminder.org/data).
 
@@ -39,7 +41,7 @@ Now, we import data on population estimates per country per year from the World 
 population = pd.read_csv("data/population_estimates_world_bank.csv")
 ```
 
-# Data Pivoting
+# 4. Data Pivoting
 
 Now that we have imported the data it's time to pivot it.
 
@@ -66,16 +68,14 @@ For example:
 | Afghanistan | 1993 | 1100  |
 | Afghanistan | 1994 | 1200  |
 
-## Instructions for Pivoting `new_hiv_raw` Data
+## 4.1 Instructions for Pivoting `new_hiv_raw` Data
 
 Reshape the `new_hiv_raw` dataset by converting the columns that represent different years into a new column called `year`, and place the corresponding values into a new column called `new_cases`.
 
 Hints:
 
 1. Use `melt()` on `new_hiv_raw`.
-
 2. Exclude the `country` and `country_code` columns from being melted by specifying `id_vars=['country', 'country_code']`.
-
 3. Set the names of the new columns inside `melt()` using:
     - `var_name='year'` to label the column that will store the years.
     - `value_name='new_cases'` to store the values representing new HIV cases under the `new_cases` column.
@@ -87,7 +87,7 @@ new_hiv_long =
 
 ---
 
-## Instructions for Pivoting `total_hiv_raw` Data
+## 4.2 Instructions for Pivoting `total_hiv_raw` Data
 
 In a similar manner, pivot the `total_hiv_raw` dataset to a long format. Convert the year columns into a new column called `year` and the counts into `total_cases`.
 
@@ -101,10 +101,9 @@ total_hiv_long =
 After performing these steps, make sure that you have two reshaped datasets:
 
 - `new_hiv_long` with **4 columns**: `country`, `country_code`, `year`, and `new_cases`.
-
 - `total_hiv_long` with **4 columns**: `country`, `country_code`, `year`, and `total_cases`.
 
-# Joining the HIV Datasets
+# 5. Joining the HIV Datasets
 
 Now that both datasets are in long format, we can join them.
 
@@ -119,7 +118,7 @@ hiv_data_combined =
 
 **CHECKPOINT:** The combined dataset should have columns for `country`, `country_code`, `year`, `total_cases`, and `new_cases`. There may some missing values; that is okay.
 
-# Add Population Data
+# 6. Add Population Data
 
 The `population` dataset contains information on population per year from 2000 to 2017.
 
@@ -133,17 +132,14 @@ Additionally, note that the `country` column doesn't have full country names, bu
 
 This will make it easier to join with our HIV dataset, since country codes are consistent across datasets (unlike full country names).
 
-## Filter and Prepare Population Data
+## 6.1 Filter and Prepare Population Data
 
 Next, complete the following transformations on the `population` dataset:
 
 -   Query the data to just the `SP.POP.TOTL` indicator
-
 -   Melt the data to a long format.
-
 -   Rename the "country" column to "country_code" so that we can join it properly later on.
-
-- Drop the `indicator` column.
+-   Drop the `indicator` column.
 
 Store your final result as `population_long`.
 
@@ -155,7 +151,7 @@ Store your final result as `population_long`.
 
 After performing these steps, make sure that you have a dataset named `population_long` with **3 columns**: `country_code`, `year`, and `population`.
 
-## Join Population Data with HIV Data
+## 6.2 Join Population Data with HIV Data
 
 Use `pd.merge()` to add the population information to your HIV data combined dataset (the HIV data should be the left or primary dataset). You should use both "country_code" and "year" as keys.
 
@@ -165,7 +161,7 @@ Use `pd.merge()` to add the population information to your HIV data combined dat
 
 **CHECKPOINT:** Verify that `hiv_data_combined_pop` now contains a `population` column.
 
-## Calculate Incidence Rate and Prevalence Rate
+## 6.3 Calculate Incidence Rate and Prevalence Rate
 
 Lastly, calculate the incidence rate and prevalence rate per 100,000 people:
 
@@ -176,7 +172,7 @@ Lastly, calculate the incidence rate and prevalence rate per 100,000 people:
 # Calculate incidence and prevalence rates
 ```
 
-# Plot Incidence Rates
+# 7. Plot Incidence Rates
 
 Now, you'll select 3 countries of your choice and plot their incidence rate over time.
 
@@ -198,7 +194,7 @@ Now plot incidence rates over time using Plotly Express.
 
 ```
 
-# Plot Prevalence Rates
+# 8. Plot Prevalence Rates
 
 Plot their prevalence rates over time, using a line graph.
 
@@ -206,10 +202,15 @@ Plot their prevalence rates over time, using a line graph.
 # Your code here
 ```
 
-# Optional Ungraded Challenge
+# 9. Optional Challenge
 
-In this challenge, you will:
+For this challenge, you should:
 
 1. **Add Regional Information:** Use the `country_converter` package to get regional (continent) information for each country.
 2. **Identify Highest Prevalence Rates per Continent:** Find the countries with the highest prevalence rate in 2011 for each continent.
 3. **Create a Bar Chart:** Make a bar chart comparing the 2011 prevalence rates of these countries.
+
+```{python}
+# Your code here
+```
+
