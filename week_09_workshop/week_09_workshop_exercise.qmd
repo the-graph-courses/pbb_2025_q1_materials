@@ -68,7 +68,7 @@ For example:
 | Afghanistan | 1993 | 1100  |
 | Afghanistan | 1994 | 1200  |
 
-## 4.1 Instructions for Pivoting `new_hiv_raw` Data
+## 4.1 Instructions for Reshaping `new_hiv_raw` Data
 
 Reshape the `new_hiv_raw` dataset by converting the columns that represent different years into a new column called `year`, and place the corresponding values into a new column called `new_cases`.
 
@@ -87,7 +87,7 @@ new_hiv_long =
 
 ---
 
-## 4.2 Instructions for Pivoting `total_hiv_raw` Data
+## 4.2 Instructions for Reshaping `total_hiv_raw` Data
 
 In a similar manner, pivot the `total_hiv_raw` dataset to a long format. Convert the year columns into a new column called `year` and the counts into `total_cases`.
 
